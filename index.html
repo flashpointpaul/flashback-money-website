@@ -20,33 +20,34 @@
             box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06); /* shadow-md */
         }
         .btn-primary {
-            background-color: #2563eb; /* blue-600 */
+            /* Changed to a gradient matching the logo's blue/purple fade */
+            background-image: linear-gradient(to right, #6366f1, #9333ea); /* from-indigo-500 to-purple-600 */
             color: white;
             font-weight: 600; /* font-semibold */
             padding: 0.75rem 1.5rem; /* py-3 px-6 */
             border-radius: 0.75rem; /* rounded-xl */
             text-align: center;
-            transition: background-color 0.3s ease;
+            transition: opacity 0.3s ease; /* Transition for opacity on hover */
         }
         .btn-primary:hover {
-            background-color: #1d4ed8; /* blue-700 */
+            opacity: 0.9; /* Slightly reduce opacity on hover for a subtle effect */
         }
         .copy-button {
-            background-color: #e0e7ff; /* blue-100 */
-            color: #2563eb; /* blue-600 */
+            background-color: #e0e7ff; /* indigo-100 */
+            color: #4f46e5; /* indigo-600 */
             padding: 0.5rem 1rem;
             border-radius: 0.5rem;
             display: flex;
             align-items: center;
             gap: 0.5rem;
             cursor: pointer;
-            transition: background-color 0.3s ease;
+            transition: background-color 0.3s ease, color 0.3s ease;
         }
         .copy-button:hover {
-            background-color: #c7d2fe; /* blue-200 */
+            background-color: #c7d2fe; /* indigo-200 */
         }
         .copied-message {
-            color: #16a34a; /* green-600 */
+            color: #22c55e; /* green-500 for better visibility */
             font-weight: 600;
         }
     </style>
@@ -64,24 +65,24 @@
         </div>
 
         <!-- Main Heading -->
-        <h1 class="text-2xl sm:text-3xl font-extrabold text-center text-gray-900 leading-tight">
+        <h1 class="text-2xl sm:text-3xl font-extrabold text-center text-indigo-800 leading-tight">
             70% of Our Referral Rewards Airdropped to your Wallet
         </h1>
 
         <!-- Steps Section -->
         <div class="flex flex-col items-center space-y-4">
             <!-- Step 1 -->
-            <div class="card w-full max-w-xl p-5 space-y-3">
+            <div class="card w-full max-w-2xl p-5 space-y-3"> <!-- Widened to max-w-2xl -->
                 <div class="flex items-center space-x-3">
                     <!-- ArrowRightCircle Icon (using SVG) -->
-                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-arrow-right-circle w-6 h-6 text-blue-600">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-arrow-right-circle w-6 h-6 text-indigo-600"> <!-- Icon color adjusted -->
                         <circle cx="12" cy="12" r="10"/>
                         <path d="M8 12h8"/>
                         <path d="m12 16 4-4-4-4"/>
                     </svg>
                     <h2 class="text-lg sm:text-xl font-semibold text-gray-800">
                         Step 1: Sign up to Flash Trade using our
-                        <a href="https://beast.flash.trade?referral=FBK" class="text-blue-600 underline hover:text-blue-800 transition" target="_blank" rel="noopener noreferrer">referral link</a>
+                        <a href="https://beast.flash.trade?referral=FBK" class="text-indigo-600 underline hover:text-indigo-800 transition" target="_blank" rel="noopener noreferrer">referral link</a> <!-- Link color adjusted -->
                     </h2>
                 </div>
                 <p class="text-sm text-gray-600">
@@ -90,9 +91,9 @@
             </div>
 
             <!-- Step 2 -->
-            <div class="card w-full max-w-xl p-5 space-y-3">
+            <div class="card w-full max-w-2xl p-5 space-y-3"> <!-- Widened to max-w-2xl -->
                 <div class="flex items-center space-x-3">
-                    <span class="text-2xl">⚡</span>
+                    <span class="text-2xl text-yellow-500">⚡</span> <!-- Lightning bolt color adjusted -->
                     <h2 class="text-lg sm:text-xl font-semibold text-gray-800">Step 2: Begin Trading</h2>
                 </div>
                 <p class="text-sm text-gray-600">
@@ -101,9 +102,9 @@
             </div>
 
             <!-- Step 3 -->
-            <div class="card w-full max-w-xl p-5 space-y-3">
+            <div class="card w-full max-w-2xl p-5 space-y-3"> <!-- Widened to max-w-2xl -->
                 <div class="flex items-center space-x-3">
-                    <span class="text-2xl">💸</span>
+                    <span class="text-2xl text-green-600">💸</span> <!-- Money bag color adjusted -->
                     <h2 class="text-lg sm:text-xl font-semibold text-gray-800">Step 3: Instant Cashback</h2>
                 </div>
                 <p class="text-sm text-gray-600">
