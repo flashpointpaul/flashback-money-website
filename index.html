@@ -12,28 +12,33 @@
         /* Custom styles to ensure rounded corners on all elements and Inter font */
         body {
             font-family: "Inter", sans-serif;
-            background-color: #f0f2f5; /* Light grey background */
+            background-color: #f3f4f6; /* A slightly darker light grey for more depth */
         }
         .card {
             background-color: white;
             border-radius: 0.75rem; /* rounded-xl */
             box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06); /* shadow-md */
+            transition: transform 0.2s ease-in-out;
+        }
+        .card:hover {
+            transform: translateY(-2px); /* Lift the card on hover */
         }
         .btn-primary {
-            /* Changed to a gradient matching the logo's blue/purple fade */
             background-image: linear-gradient(to right, #6366f1, #9333ea); /* from-indigo-500 to-purple-600 */
             color: white;
-            font-weight: 600; /* font-semibold */
-            padding: 0.75rem 1.5rem; /* py-3 px-6 */
-            border-radius: 0.75rem; /* rounded-xl */
+            font-weight: 600;
+            padding: 1rem 2rem; /* Increased padding for a larger button */
+            border-radius: 0.75rem;
             text-align: center;
-            transition: opacity 0.3s ease; /* Transition for opacity on hover */
+            transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
         }
         .btn-primary:hover {
-            opacity: 0.9; /* Slightly reduce opacity on hover for a subtle effect */
+            transform: translateY(-2px); /* Lift the button on hover */
+            box-shadow: 0 6px 12px -1px rgba(0, 0, 0, 0.1), 0 4px 6px -1px rgba(0, 0, 0, 0.06);
         }
         .copy-button {
-            background-color: #e0e7ff; /* indigo-100 */
+            background-color: #eef2ff; /* indigo-50 */
             color: #4f46e5; /* indigo-600 */
             padding: 0.5rem 1rem;
             border-radius: 0.5rem;
@@ -44,86 +49,81 @@
             transition: background-color 0.3s ease, color 0.3s ease;
         }
         .copy-button:hover {
-            background-color: #c7d2fe; /* indigo-200 */
+            background-color: #e0e7ff; /* indigo-100 */
         }
         .copied-message {
-            color: #22c55e; /* green-500 for better visibility */
+            color: #16a34a; /* green-600 */
             font-weight: 600;
         }
     </style>
 </head>
 <body class="antialiased">
-    <div class="max-w-4xl mx-auto px-4 py-4 sm:py-6 space-y-6">
+    <div class="max-w-4xl mx-auto px-4 py-8 space-y-10">
         <!-- Logo Section -->
         <div class="flex justify-center">
             <img
                 src="/Flashback_Logo.png"
                 alt="FlashBack logo"
-                class="w-48 sm:w-60 h-auto rounded-lg shadow-md"
-                onerror="this.onerror=null;this.src='https://placehold.co/240x90/E0E7FF/2563EB?text=FlashBack+Logo.png';"
+                class="w-72 sm:w-96 h-auto"
+                onerror="this.onerror=null;this.src='https://placehold.co/384x144/E0E7FF/2563EB?text=FlashBack+Logo.png';"
             />
         </div>
 
         <!-- Main Heading -->
-        <h1 class="text-2xl sm:text-3xl font-extrabold text-center text-indigo-800 leading-tight">
-            70% of Referral Rewards Airdropped to your Wallet!
+        <h1 class="text-3xl sm:text-4xl font-extrabold text-center text-indigo-700 leading-tight tracking-wide">
+            Get 70% of Our Referral Rewards Airdropped to your Wallet Instantly
         </h1>
 
+        <!-- Call to Action (Top) -->
+        <div class="flex justify-center">
+            <a href="https://beast.flash.trade?referral=FLASHBACK" target="_blank" rel="noopener noreferrer" class="btn-primary w-full sm:w-2/3 max-w-lg text-lg">
+                Start Earning Cashback Today!
+            </a>
+        </div>
+
         <!-- Steps Section -->
-        <div class="flex flex-col items-center space-y-4">
+        <div class="flex flex-col items-center space-y-6">
             <!-- Step 1 -->
-            <div class="card w-full max-w-2xl p-5 space-y-3"> <!-- Widened to max-w-2xl -->
-                <div class="flex items-center space-x-3">
-                    <!-- ArrowRightCircle Icon (using SVG) -->
-                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-arrow-right-circle w-6 h-6 text-indigo-600"> <!-- Icon color adjusted -->
-                        <circle cx="12" cy="12" r="10"/>
-                        <path d="M8 12h8"/>
-                        <path d="m12 16 4-4-4-4"/>
-                    </svg>
-                    <h2 class="text-lg sm:text-xl font-semibold text-gray-800">
-                        Step 1: Sign up to Flash Trade using our
-                        <a href="https://beast.flash.trade?referral=FLASHBACK" class="text-indigo-600 underline hover:text-indigo-800 transition" target="_blank" rel="noopener noreferrer">referral link</a> <!-- Link color adjusted -->
+            <div class="card w-full max-w-2xl p-6 space-y-3">
+                <div class="flex items-center space-x-4">
+                    <span class="text-2xl font-bold text-indigo-600">1</span>
+                    <h2 class="text-xl font-semibold text-gray-700">
+                        Sign up with our <a href="https://beast.flash.trade?referral=FLASHBACK" class="text-indigo-600 underline hover:text-indigo-800 transition" target="_blank" rel="noopener noreferrer">referral link</a>
                     </h2>
                 </div>
-                <p class="text-sm text-gray-600">
+                <p class="text-sm text-gray-600 pl-10">
                     Flash Trade offers up to 100x leverage on a wide range of crypto, commodities, and FX.
                 </p>
             </div>
 
             <!-- Step 2 -->
-            <div class="card w-full max-w-2xl p-5 space-y-3"> <!-- Widened to max-w-2xl -->
-                <div class="flex items-center space-x-3">
-                    <span class="text-2xl text-yellow-500">⚡</span> <!-- Lightning bolt color adjusted -->
-                    <h2 class="text-lg sm:text-xl font-semibold text-gray-800">Step 2: Begin Trading</h2>
+            <div class="card w-full max-w-2xl p-6 space-y-3">
+                <div class="flex items-center space-x-4">
+                    <span class="text-2xl font-bold text-indigo-600">2</span>
+                    <h2 class="text-xl font-semibold text-gray-700">Begin Trading</h2>
                 </div>
-                <p class="text-sm text-gray-600">
+                <p class="text-sm text-gray-600 pl-10">
                     Open a position on any market with your chosen leverage.
                 </p>
             </div>
 
             <!-- Step 3 -->
-            <div class="card w-full max-w-2xl p-5 space-y-3"> <!-- Widened to max-w-2xl -->
-                <div class="flex items-center space-x-3">
-                    <span class="text-2xl text-green-600">💸</span> <!-- Money bag color adjusted -->
-                    <h2 class="text-lg sm:text-xl font-semibold text-gray-800">Step 3: Instant Cashback</h2>
+            <div class="card w-full max-w-2xl p-6 space-y-3">
+                <div class="flex items-center space-x-4">
+                    <span class="text-2xl font-bold text-indigo-600">3</span>
+                    <h2 class="text-xl font-semibold text-gray-700">Instant Cashback</h2>
                 </div>
-                <p class="text-sm text-gray-600">
+                <p class="text-sm text-gray-600 pl-10">
                     70% of the referral rewards we receive from your trading activity are sent to your wallet.
                 </p>
             </div>
         </div>
 
-        <!-- Call to Action -->
-        <div class="pt-6 flex flex-col items-center space-y-3">
-            <a
-                href="https://beast.flash.trade?referral=FLASHBACK"
-                target="_blank"
-                rel="noopener noreferrer"
-                class="btn-primary w-full sm:w-2/3 max-w-sm"
-            >
+        <!-- Call to Action (Bottom) -->
+        <div class="flex flex-col items-center space-y-4">
+            <a href="https://beast.flash.trade?referral=FLASHBACK" target="_blank" rel="noopener noreferrer" class="btn-primary w-full sm:w-2/3 max-w-lg text-lg">
                 Take me to Flash Trade
             </a>
-
             <div class="flex flex-col sm:flex-row items-center space-y-2 sm:space-y-0 sm:space-x-2 text-sm text-gray-700 break-all text-center">
                 <span>Or copy and paste into your browser: <span id="referralLinkText">https://beast.flash.trade?referral=FLASHBACK</span></span>
                 <button id="copyButton" class="copy-button">
@@ -138,50 +138,48 @@
         </div>
 
         <!-- Cashback Example Section -->
-        <div class="pt-6 border-t border-gray-200">
-            <h2 class="text-xl sm:text-2xl font-bold mb-4 text-center text-gray-800">Cashback Example</h2>
+        <div class="pt-8 border-t border-gray-200">
+            <h2 class="text-2xl font-bold mb-6 text-center text-gray-800">Cashback Example</h2>
             <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-4 text-center text-sm">
-                <div class="card p-4">
-                    <p class="text-gray-500">Trade Size</p>
-                    <p class="font-semibold text-gray-700">$1,000 at 10x Leverage = $10,000</p>
+                <!-- Start box with new color -->
+                <div class="card p-5 bg-indigo-100 flex flex-col justify-center">
+                    <p class="text-gray-700 font-semibold mb-2">Trade Size</p>
+                    <p class="font-bold text-lg text-indigo-800">$1k at 10x Leverage</p>
                 </div>
-                <div class="card p-4">
-                    <p class="text-gray-500">Flash Trade's Fees</p>
-                    <p class="font-semibold text-gray-700">$30.00</p>
+                <!-- Middle boxes remain unchanged -->
+                <div class="card p-5 bg-indigo-50 flex flex-col justify-center">
+                    <p class="text-gray-700 font-semibold mb-2">Flash Trade's Fees</p>
+                    <p class="font-bold text-lg text-indigo-800">$30.00</p>
                 </div>
-                <div class="card p-4">
-                    <p class="text-gray-500">Referral Reward</p>
-                    <p class="font-semibold text-gray-700">$3.00</p>
+                <div class="card p-5 bg-indigo-50 flex flex-col justify-center">
+                    <p class="text-gray-700 font-semibold mb-2">Referral Reward</p>
+                    <p class="font-bold text-lg text-indigo-800">$3.00</p>
                 </div>
-                <div class="card p-4">
-                    <p class="text-gray-500">Your Cashback</p>
-                    <p class="font-bold text-green-600 text-base sm:text-lg">$2.10</p>
+                <!-- End box with new color -->
+                <div class="card p-5 bg-indigo-100 flex flex-col justify-center">
+                    <p class="text-gray-700 font-semibold mb-2">Your Cashback</p>
+                    <p class="text-2xl font-extrabold text-green-600">$2.10</p>
                 </div>
             </div>
         </div>
 
         <!-- About Us Section -->
-        <div class="pt-6 border-t border-gray-200 text-left text-sm text-gray-600 space-y-2">
-            <h2 class="text-lg sm:text-xl font-semibold text-gray-700 text-center">About Us</h2>
+        <div class="pt-8 border-t border-gray-200 text-left text-sm text-gray-600 space-y-4">
+            <h2 class="text-xl sm:text-2xl font-bold text-gray-700 text-center">About Us</h2>
             <p>
                 We are a couple of Flash Trade community members who have supported Flash from the very start. We hold a significant amount of Flash Trade's token ($FAF), giving us the highest tier referral rewards.
             </p>
             <p>
-                We built FlashBack to share our rewards with our referees. By returning the majority of our rewards back to users, we aim to grow the Flash userbase and support its rise to the <strong>#1 Perps DEX</strong>. All FlashBack's proceeds will be used to buy more $FAF!
+                We built FlashBack to share our rewards with our referees. By returning the majority of our rewards back to users, we aim to grow the Flash userbase and support its rise to the <strong>#1 Perps DEX</strong>. All FlashBack's proceeds will be used to buy more $FAF!
             </p>
         </div>
 
         <!-- Footer Section -->
-        <div class="pt-4 flex flex-col items-center space-y-2">
-            <a
-                href="https://x.com/flash_cashback"
-                target="_blank"
-                rel="noopener noreferrer"
-                class="flex items-center space-x-2 text-sm text-blue-500 hover:text-blue-700 transition"
-            >
-                <!-- Twitter Icon (using SVG) -->
-                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-twitter w-4 h-4">
-                    <path d="M22 4s-.7 2.1-2 3.4c1.6 10-9.4 17-18 11.6 2.2.1 4.4-.6 6-2 1.1-.9 2-2.3 2-4V2c-4 4-7 7-10 9l2 3c2 2 4 2 7 2h3c4 0 7-3 7-7V4Z"/>
+        <div class="pt-6 flex flex-col items-center space-y-3">
+            <a href="https://x.com/flash_cashback" target="_blank" rel="noopener noreferrer" class="flex items-center space-x-2 text-sm text-indigo-500 hover:text-indigo-700 transition">
+                <!-- X Logo (using SVG) -->
+                <svg viewBox="0 0 1200 1227" fill="currentColor" class="w-4 h-4" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M714.163 519.284L1160.89 0H1055.03L667.137 450.887L357.328 0H0L452.078 612.91L0 1227H105.866L504.413 750.375L821.572 1227H1200L714.163 519.284ZM50.596 1104.144L363.638 122.99H208.577L-12.464 1104.144H50.596ZM944.385 1104.144L631.343 122.99H786.404L1134.45 1104.144H944.385Z"/>
                 </svg>
                 <span>Follow us on X</span>
             </a>
@@ -201,25 +199,18 @@
             if (copyButton) {
                 copyButton.addEventListener('click', () => {
                     try {
-                        // Create a temporary textarea element to copy the text
                         const textarea = document.createElement("textarea");
                         textarea.value = referralLink;
-                        // Append the textarea to the document body
                         document.body.appendChild(textarea);
-                        // Select the text in the textarea
                         textarea.select();
-                        // Execute the copy command
                         document.execCommand("copy");
-                        // Remove the textarea from the document body
                         document.body.removeChild(textarea);
 
-                        // Update the button text and style
                         copyStatus.textContent = 'Copied!';
                         copyStatus.classList.add('copied-message');
                         copyButton.classList.add('bg-green-100', 'text-green-600');
                         copyButton.classList.remove('bg-blue-100', 'text-blue-600');
 
-                        // Revert back after 2 seconds
                         setTimeout(() => {
                             copyStatus.textContent = 'Copy';
                             copyStatus.classList.remove('copied-message');
@@ -228,7 +219,6 @@
                         }, 2000);
                     } catch (err) {
                         console.error("Copy failed", err);
-                        // Optionally, provide user feedback for copy failure
                         copyStatus.textContent = 'Failed to copy!';
                         copyStatus.classList.add('text-red-600');
                         setTimeout(() => {
