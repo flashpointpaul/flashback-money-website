@@ -12,7 +12,8 @@
         /* Custom styles to ensure rounded corners on all elements and Inter font */
         body {
             font-family: "Inter", sans-serif;
-            background-color: #f3f4f6; /* A slightly darker light grey for more depth */
+            background-image: linear-gradient(to bottom right, #4c51bf, #7f00ff); /* Deep indigo to purple gradient */
+            color: #ffffff; /* Default text color is now white */
         }
         .card {
             background-color: white;
@@ -24,7 +25,8 @@
             transform: translateY(-2px); /* Lift the card on hover */
         }
         .btn-primary {
-            background-image: linear-gradient(to right, #6366f1, #9333ea); /* from-indigo-500 to-purple-600 */
+            /* Changed to a vibrant yellow-orange gradient */
+            background-image: linear-gradient(to right, #fbbf24, #f97316); /* from-amber-400 to-orange-500 */
             color: white;
             font-weight: 600;
             padding: 1rem 2rem; /* Increased padding for a larger button */
@@ -38,7 +40,7 @@
             box-shadow: 0 6px 12px -1px rgba(0, 0, 0, 0.1), 0 4px 6px -1px rgba(0, 0, 0, 0.06);
         }
         .copy-button {
-            background-color: #eef2ff; /* indigo-50 */
+            background-color: #ffffff;
             color: #4f46e5; /* indigo-600 */
             padding: 0.5rem 1rem;
             border-radius: 0.5rem;
@@ -49,7 +51,7 @@
             transition: background-color 0.3s ease, color 0.3s ease;
         }
         .copy-button:hover {
-            background-color: #e0e7ff; /* indigo-100 */
+            background-color: #f3f4f6;
         }
         .copied-message {
             color: #16a34a; /* green-600 */
@@ -65,12 +67,12 @@
                 src="/Flashback_Logo.png"
                 alt="FlashBack logo"
                 class="w-72 sm:w-96 h-auto"
-                onerror="this.onerror=null;this.src='https://placehold.co/384x144/E0E7FF/2563EB?text=FlashBack+Logo.png';"
+                onerror="this.onerror=null;this.src='https://placehold.co/384x144/FFFFFF/2563EB?text=FlashBack+Logo.png';"
             />
         </div>
 
         <!-- Main Heading -->
-        <h1 class="text-3xl sm:text-4xl font-extrabold text-center text-indigo-700 leading-tight tracking-wide">
+        <h1 class="text-3xl sm:text-4xl font-extrabold text-center text-white leading-tight tracking-wide">
             Get 70% of Our Referral Rewards Airdropped to your Wallet Instantly
         </h1>
 
@@ -124,8 +126,8 @@
             <a href="https://beast.flash.trade?referral=FLASHBACK" target="_blank" rel="noopener noreferrer" class="btn-primary w-full sm:w-2/3 max-w-lg text-lg">
                 Take me to Flash Trade
             </a>
-            <div class="flex flex-col sm:flex-row items-center space-y-2 sm:space-y-0 sm:space-x-2 text-sm text-gray-700 break-all text-center">
-                <span>Or copy and paste into your browser: <span id="referralLinkText">https://beast.flash.trade?referral=FLASHBACK</span></span>
+            <div class="flex flex-col sm:flex-row items-center space-y-2 sm:space-y-0 sm:space-x-2 text-sm text-white break-all text-center">
+                <span>Or copy and paste into your browser: <span id="referralLinkText" class="text-indigo-400">https://beast.flash.trade?referral=FLASHBACK</span></span>
                 <button id="copyButton" class="copy-button">
                     <!-- Copy Icon (using SVG) -->
                     <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-copy">
@@ -138,15 +140,14 @@
         </div>
 
         <!-- Cashback Example Section -->
-        <div class="pt-8 border-t border-gray-200">
-            <h2 class="text-2xl font-bold mb-6 text-center text-gray-800">Cashback Example</h2>
+        <div class="pt-8 border-t border-indigo-400">
+            <h2 class="text-2xl font-bold mb-6 text-center text-white">Cashback Example</h2>
             <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-4 text-center text-sm">
-                <!-- Start box with new color -->
-                <div class="card p-5 bg-indigo-100 flex flex-col justify-center">
+                <!-- All four cards now have consistent styling -->
+                <div class="card p-5 bg-indigo-50 flex flex-col justify-center">
                     <p class="text-gray-700 font-semibold mb-2">Trade Size</p>
                     <p class="font-bold text-lg text-indigo-800">$1k at 10x Leverage</p>
                 </div>
-                <!-- Middle boxes remain unchanged -->
                 <div class="card p-5 bg-indigo-50 flex flex-col justify-center">
                     <p class="text-gray-700 font-semibold mb-2">Flash Trade's Fees</p>
                     <p class="font-bold text-lg text-indigo-800">$30.00</p>
@@ -155,8 +156,7 @@
                     <p class="text-gray-700 font-semibold mb-2">Referral Reward</p>
                     <p class="font-bold text-lg text-indigo-800">$3.00</p>
                 </div>
-                <!-- End box with new color -->
-                <div class="card p-5 bg-indigo-100 flex flex-col justify-center">
+                <div class="card p-5 bg-indigo-50 flex flex-col justify-center">
                     <p class="text-gray-700 font-semibold mb-2">Your Cashback</p>
                     <p class="text-2xl font-extrabold text-green-600">$2.10</p>
                 </div>
@@ -164,8 +164,8 @@
         </div>
 
         <!-- About Us Section -->
-        <div class="pt-8 border-t border-gray-200 text-left text-sm text-gray-600 space-y-4">
-            <h2 class="text-xl sm:text-2xl font-bold text-gray-700 text-center">About Us</h2>
+        <div class="pt-8 border-t border-indigo-400 text-left text-sm text-white space-y-4">
+            <h2 class="text-xl sm:text-2xl font-bold text-white text-center">About Us</h2>
             <p>
                 We are a couple of Flash Trade community members who have supported Flash from the very start. We hold a significant amount of Flash Trade's token ($FAF), giving us the highest tier referral rewards.
             </p>
@@ -176,14 +176,14 @@
 
         <!-- Footer Section -->
         <div class="pt-6 flex flex-col items-center space-y-3">
-            <a href="https://x.com/flash_cashback" target="_blank" rel="noopener noreferrer" class="flex items-center space-x-2 text-sm text-indigo-500 hover:text-indigo-700 transition">
+            <a href="https://x.com/flash_cashback" target="_blank" rel="noopener noreferrer" class="flex items-center space-x-2 text-sm text-white hover:text-indigo-200 transition">
                 <!-- X Logo (using SVG) -->
                 <svg viewBox="0 0 1200 1227" fill="currentColor" class="w-4 h-4" xmlns="http://www.w3.org/2000/svg">
                     <path d="M714.163 519.284L1160.89 0H1055.03L667.137 450.887L357.328 0H0L452.078 612.91L0 1227H105.866L504.413 750.375L821.572 1227H1200L714.163 519.284ZM50.596 1104.144L363.638 122.99H208.577L-12.464 1104.144H50.596ZM944.385 1104.144L631.343 122.99H786.404L1134.45 1104.144H944.385Z"/>
                 </svg>
                 <span>Follow us on X</span>
             </a>
-            <p class="text-xs text-center text-gray-400 pt-1">
+            <p class="text-xs text-center text-gray-300 pt-1">
                 <strong>Disclaimer:</strong> This site does not constitute financial advice.
             </p>
         </div>
