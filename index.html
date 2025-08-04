@@ -6,7 +6,24 @@
     <title>FlashBack - Referral Reward Sharing</title>
     <!-- Favicon (Lightning Bolt SVG) -->
     <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%232563eb'%3E%3Cpath d='M13 2L3 14h9l-1 8 10-12h-9l1-8z'/%3E%3C/svg%3E" type="image/svg+xml">
-    <!-- Tailwind CSS CDN -->
+     <!-- Google Analytics 4 (GA4) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-CZ0VEKYEHR"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-CZ0VEKYEHR');
+
+        function trackButtonClick(buttonName) {
+            gtag('event', 'cta_button_click', {
+                'event_category': 'Engagement',
+                'event_label': buttonName,
+                'value': 1
+            });
+        }
+    </script>
+	
+	<!-- Tailwind CSS CDN -->
     <script src="https://cdn.tailwindcss.com"></script>
     <style>
         /* Custom styles to ensure rounded corners on all elements and Inter font */
@@ -79,7 +96,7 @@
 
         <!-- Call to Action (Top) -->
         <div class="flex justify-center">
-            <a href="https://beast.flash.trade?referral=FLASHBACK" target="_blank" rel="noopener noreferrer" class="btn-primary w-full sm:w-2/3 max-w-lg text-lg">
+            <a href="https://beast.flash.trade?referral=FLASHBACK" target="_blank" rel="noopener noreferrer" class="btn-primary w-full sm:w-2/3 max-w-lg text-lg" onclick="trackButtonClick('Top CTA Button')">
                 Start Earning Cashback Today!
             </a>
         </div>
@@ -91,7 +108,7 @@
                 <div class="flex items-center space-x-4">
                     <span class="text-2xl font-bold text-indigo-600">1</span>
                     <h2 class="text-xl font-semibold text-gray-700">
-                        Sign up with our <a href="https://beast.flash.trade?referral=FLASHBACK" class="text-indigo-600 underline hover:text-indigo-800 transition" target="_blank" rel="noopener noreferrer">referral link</a>
+                        Sign up with our <a href="https://beast.flash.trade?referral=FLASHBACK" class="text-indigo-600 underline hover:text-indigo-800 transition" target="_blank" rel="noopener noreferrer" onclick="trackButtonClick('Step 1 Referral Link')">referral link</a>
                     </h2>
                 </div>
                 <p class="text-sm text-gray-600 pl-10">
@@ -124,7 +141,7 @@
 
         <!-- Call to Action (Bottom) -->
         <div class="flex flex-col items-center space-y-4">
-            <a href="https://beast.flash.trade?referral=FLASHBACK" target="_blank" rel="noopener noreferrer" class="btn-primary w-full sm:w-2/3 max-w-lg text-lg">
+            <a href="https://beast.flash.trade?referral=FLASHBACK" target="_blank" rel="noopener noreferrer" class="btn-primary w-full sm:w-2/3 max-w-lg text-lg" onclick="trackButtonClick('Bottom CTA Button')">
                 Take me to Flash Trade
             </a>
             <div class="flex flex-col sm:flex-row items-center space-y-2 sm:space-y-0 sm:space-x-2 text-sm text-white break-all text-center">
@@ -220,6 +237,10 @@
                             copyButton.classList.remove('bg-green-100', 'text-green-600');
                             copyButton.classList.add('bg-blue-100', 'text-blue-600');
                         }, 2000);
+					// New line to track the copy button click
+                        trackButtonClick('Copy Button');	
+						
+						
                     } catch (err) {
                         console.error("Copy failed", err);
                         copyStatus.textContent = 'Failed to copy!';
