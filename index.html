@@ -6,7 +6,7 @@
     <title>FlashBack - Referral Reward Sharing</title>
     <!-- Favicon (Lightning Bolt SVG) -->
     <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%232563eb'%3E%3Cpath d='M13 2L3 14h9l-1 8 10-12h-9l1-8z'/%3E%3C/svg%3E" type="image/svg+xml">
-     <!-- Google Analytics 4 (GA4) -->
+    <!-- Google Analytics 4 (GA4) -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-CZ0VEKYEHR"></script>
     <script>
         window.dataLayer = window.dataLayer || [];
@@ -22,16 +22,13 @@
             });
         }
     </script>
-	
-	<!-- Tailwind CSS CDN -->
+    <!-- Tailwind CSS CDN -->
     <script src="https://cdn.tailwindcss.com"></script>
     <style>
         /* Custom styles to ensure rounded corners on all elements and Inter font */
         body {
             font-family: "Inter", sans-serif;
-            /* New background: white block at the top, solid purple at the bottom */
-            background-image: linear-gradient(to bottom, white 17vh, #7f00ff 17vh);
-            color: #ffffff; /* Default text color is now white */
+            background-color: #f7f7f7; /* Soft, off-white background */
         }
         .card {
             background-color: white;
@@ -43,7 +40,6 @@
             transform: translateY(-2px); /* Lift the card on hover */
         }
         .btn-primary {
-            /* Changed to a vibrant yellow-orange gradient */
             background-image: linear-gradient(to right, #fbbf24, #f97316); /* from-amber-400 to-orange-500 */
             color: white;
             font-weight: 600;
@@ -51,14 +47,14 @@
             border-radius: 0.75rem;
             text-align: center;
             transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
-            box-shadow: 0 4px 6px -1-px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
         }
         .btn-primary:hover {
             transform: translateY(-2px); /* Lift the button on hover */
-            box-shadow: 6px 12px -1px rgba(0, 0, 0, 0.1), 0 4px 6px -1px rgba(0, 0, 0, 0.06);
+            box-shadow: 0 6px 12px -1px rgba(0, 0, 0, 0.1), 0 4px 6px -1px rgba(0, 0, 0, 0.06);
         }
         .copy-button {
-            background-color: #ffffff;
+            background-color: #e0e7ff; /* indigo-100 */
             color: #4f46e5; /* indigo-600 */
             padding: 0.5rem 1rem;
             border-radius: 0.5rem;
@@ -69,28 +65,65 @@
             transition: background-color 0.3s ease, color 0.3s ease;
         }
         .copy-button:hover {
-            background-color: #f3f4f6;
+            background-color: #c7d2fe; /* indigo-200 */
         }
-        .copied-message {
-            color: #16a34a; /* green-600 */
-            font-weight: 600;
+        /* Tooltip-specific styles */
+        .tooltip-container {
+            position: relative;
+            display: inline-block;
+        }
+        .tooltip-icon {
+            cursor: pointer;
+            color: #4f46e5; /* indigo-600 */
+            margin-left: 0.5rem;
+        }
+        .tooltip-box {
+            visibility: hidden;
+            background-color: #eef2ff; /* bg-indigo-50 color */
+            color: #4f46e5; /* Adjusted text color for readability on a light background */
+            text-align: left;
+            border-radius: 0.5rem;
+            padding: 0.75rem;
+            position: absolute;
+            z-index: 1;
+            bottom: 125%;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 300px;
+            opacity: 0;
+            transition: opacity 0.3s;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+        }
+        .tooltip-container:hover .tooltip-box {
+            visibility: visible;
+            opacity: 1;
+        }
+        .tooltip-box::after {
+            content: "";
+            position: absolute;
+            top: 100%;
+            left: 50%;
+            margin-left: -5px;
+            border-width: 5px;
+            border-style: solid;
+            border-color: #eef2ff transparent transparent transparent; /* Matches new background color */
         }
     </style>
 </head>
 <body class="antialiased">
     <div class="max-w-4xl mx-auto px-4 py-8 space-y-10">
         <!-- Logo Section -->
-        <div class="flex justify-center">
+        <div class="flex justify-center max-w-2xl mx-auto p-6 bg-white rounded-xl shadow-md">
             <img
                 src="/Flashback_Logo.png"
                 alt="FlashBack logo"
                 class="w-72 sm:w-96 h-auto"
-                onerror="this.onerror=null;this.src='https://placehold.co/384x144/FFFFFF/2563EB?text=FlashBack+Logo.png';"
+                onerror="this.onerror=null;this.src='https://placehold.co/384x144/E0E7FF/1f2937?text=FlashBack+Logo.png';"
             />
         </div>
 
         <!-- Main Heading -->
-        <h1 class="text-3xl sm:text-4xl font-extrabold text-center text-white leading-tight tracking-wide">
+        <h1 class="text-3xl sm:text-4xl font-extrabold text-center text-blue-900 leading-tight tracking-wide">
             Get 70% of Our Referral Rewards Airdropped to your Wallet Instantly
         </h1>
 
@@ -106,10 +139,40 @@
             <!-- Step 1 -->
             <div class="card w-full max-w-2xl p-6 space-y-3">
                 <div class="flex items-center space-x-4">
-                    <span class="text-2xl font-bold text-indigo-600">1</span>
-                    <h2 class="text-xl font-semibold text-gray-700">
-                        Sign up with our <a href="https://beast.flash.trade?referral=FLASHBACK" class="text-indigo-600 underline hover:text-indigo-800 transition" target="_blank" rel="noopener noreferrer" onclick="trackButtonClick('Step 1 Referral Link')">referral link</a>
-                    </h2>
+                    <span class="text-2xl font-bold text-blue-800">1</span>
+                    <div class="flex items-center">
+                        <h2 class="text-xl font-semibold text-gray-800">
+                            Sign up with our <a href="https://beast.flash.trade?referral=FLASHBACK" class="text-blue-600 underline hover:text-blue-800 transition" target="_blank" rel="noopener noreferrer" onclick="trackButtonClick('Step 1 Referral Link')">referral link</a>
+                        </h2>
+                        <!-- Tooltip Container -->
+                        <div class="tooltip-container">
+                            <!-- Information Icon (using SVG) -->
+                            
+                            <svg class="tooltip-icon w-5 h-5 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                            </svg>
+                            <!-- Tooltip Box -->
+                            <div class="tooltip-box p-4">
+                                <p class="font-bold text-sm">
+                                    The link will take you to Flash Trade
+                                </p>
+                                <ul class="list-disc list-inside mt-2 space-y-1 text-xs">
+                                    <li class="pl-2">
+                                        Ensure a wallet is not already connected.
+                                    </li>
+                                    <li class="pl-2">
+                                        Click Create Referral Pass.
+                                    </li>
+                                    <li class="pl-2">
+                                        Connect your wallet.
+                                    </li>
+                                    <li class="pl-2">
+                                        Fee sharing is now active. Happy trading!
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
                 </div>
                 <p class="text-sm text-gray-600 pl-10">
                     Flash Trade offers up to 500x leverage on a wide range of crypto, commodities, and FX.
@@ -119,8 +182,8 @@
             <!-- Step 2 -->
             <div class="card w-full max-w-2xl p-6 space-y-3">
                 <div class="flex items-center space-x-4">
-                    <span class="text-2xl font-bold text-indigo-600">2</span>
-                    <h2 class="text-xl font-semibold text-gray-700">Begin Trading</h2>
+                    <span class="text-2xl font-bold text-blue-800">2</span>
+                    <h2 class="text-xl font-semibold text-gray-800">Begin Trading</h2>
                 </div>
                 <p class="text-sm text-gray-600 pl-10">
                     Open a position on any market with your chosen leverage.
@@ -130,8 +193,8 @@
             <!-- Step 3 -->
             <div class="card w-full max-w-2xl p-6 space-y-3">
                 <div class="flex items-center space-x-4">
-                    <span class="text-2xl font-bold text-indigo-600">3</span>
-                    <h2 class="text-xl font-semibold text-gray-700">Instant Cashback</h2>
+                    <span class="text-2xl font-bold text-blue-800">3</span>
+                    <h2 class="text-xl font-semibold text-gray-800">Instant Cashback</h2>
                 </div>
                 <p class="text-sm text-gray-600 pl-10">
                     70% of the referral rewards we receive from your trading activity are sent to your wallet.
@@ -144,9 +207,9 @@
             <a href="https://beast.flash.trade?referral=FLASHBACK" target="_blank" rel="noopener noreferrer" class="btn-primary w-full sm:w-2/3 max-w-lg text-lg" onclick="trackButtonClick('Bottom CTA Button')">
                 Take me to Flash Trade
             </a>
-            <div class="flex flex-col sm:flex-row items-center space-y-2 sm:space-y-0 sm:space-x-2 text-sm text-white break-all text-center">
-                <span>Or copy and paste into your browser: <span id="referralLinkText" class="text-white">https://beast.flash.trade?referral=FLASHBACK</span></span>
-                <button id="copyButton" class="copy-button">
+            <div class="flex flex-col sm:flex-row items-center space-y-2 sm:space-y-0 sm:space-x-2 text-sm text-gray-700 break-all text-center">
+                <span>Or copy and paste into your browser: <span id="referralLinkText" class="text-blue-600">https://beast.flash.trade?referral=FLASHBACK</span></span>
+                <button id="copyButton" class="copy-button" onclick="trackButtonClick('Copy Button')">
                     <!-- Copy Icon (using SVG) -->
                     <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-copy">
                         <rect width="14" height="14" x="8" y="8" rx="2" ry="2"/>
@@ -158,34 +221,34 @@
         </div>
 
         <!-- Cashback Example Section -->
-        <div class="pt-8 border-t border-indigo-400">
+        <div class="pt-8 border-t border-blue-400">
             <h2 class="text-2xl font-bold mb-6 text-center text-white">Cashback Example</h2>
             <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-4 text-center text-sm">
                 <!-- Start box with vibrant yellow color and text color -->
                 <div class="card p-5 bg-[#fbbf24] flex flex-col justify-center">
                     <p class="text-gray-700 font-semibold mb-2">Trade Size</p>
-                    <p class="font-bold text-lg text-indigo-800">$1k at 10x Leverage</p>
+                    <p class="font-bold text-lg text-white-800">$1k at 10x Leverage</p>
                 </div>
                 <!-- Middle boxes with updated text colors -->
-                <div class="card p-5 bg-indigo-50 flex flex-col justify-center">
+                <div class="card p-5 bg-blue-50 flex flex-col justify-center">
                     <p class="text-gray-700 font-semibold mb-2">Flash Trade's Fees</p>
-                    <p class="font-bold text-lg text-indigo-800">$30.00</p>
+                    <p class="font-bold text-lg text-blue-800">$30.00</p>
                 </div>
-                <div class="card p-5 bg-indigo-50 flex flex-col justify-center">
+                <div class="card p-5 bg-blue-50 flex flex-col justify-center">
                     <p class="text-gray-700 font-semibold mb-2">Referral Reward</p>
-                    <p class="font-bold text-lg text-indigo-800">$3.00</p>
+                    <p class="font-bold text-lg text-blue-800">$3.00</p>
                 </div>
                 <!-- End box with vibrant green color and text color -->
                 <div class="card p-5 bg-[#22c55e] flex flex-col justify-center">
                     <p class="text-gray-700 font-semibold mb-2">Your Cashback</p>
-                    <p class="text-2xl font-extrabold text-indigo-800">$2.10</p>
+                    <p class="text-2xl font-extrabold text-white-800">$2.10</p>
                 </div>
             </div>
         </div>
 
         <!-- About Us Section -->
-        <div class="pt-8 border-t border-indigo-400 text-left text-sm text-white space-y-4">
-            <h2 class="text-xl sm:text-2xl font-bold text-white text-center">About Us</h2>
+        <div class="pt-8 border-t border-gray-200 text-left text-sm text-gray-700 space-y-4">
+            <h2 class="text-xl sm:text-2xl font-bold text-gray-800 text-center">About Us</h2>
             <p>
                 We are a couple of Flash Trade community members who have supported Flash from the very start. We hold a significant amount of Flash Trade's token ($FAF), giving us the highest tier referral rewards.
             </p>
@@ -196,14 +259,14 @@
 
         <!-- Footer Section -->
         <div class="pt-6 flex flex-col items-center space-y-3">
-            <a href="https://x.com/flash_cashback" target="_blank" rel="noopener noreferrer" class="flex items-center space-x-2 text-sm text-white hover:text-indigo-200 transition">
+            <a href="https://x.com/flash_cashback" target="_blank" rel="noopener noreferrer" class="flex items-center space-x-2 text-sm text-blue-500 hover:text-blue-700 transition">
                 <!-- X Logo (using SVG) -->
                 <svg viewBox="0 0 1200 1227" fill="currentColor" class="w-4 h-4" xmlns="http://www.w3.org/2000/svg">
                     <path d="M714.163 519.284L1160.89 0H1055.03L667.137 450.887L357.328 0H0L452.078 612.91L0 1227H105.866L504.413 750.375L821.572 1227H1200L714.163 519.284ZM50.596 1104.144L363.638 122.99H208.577L-12.464 1104.144H50.596ZM944.385 1104.144L631.343 122.99H786.404L1134.45 1104.144H944.385Z"/>
                 </svg>
                 <span>Follow us on X</span>
             </a>
-            <p class="text-xs text-center text-gray-300 pt-1">
+            <p class="text-xs text-center text-gray-500 pt-1">
                 <strong>Disclaimer:</strong> This site does not constitute financial advice.
             </p>
         </div>
@@ -237,10 +300,9 @@
                             copyButton.classList.remove('bg-green-100', 'text-green-600');
                             copyButton.classList.add('bg-blue-100', 'text-blue-600');
                         }, 2000);
-					// New line to track the copy button click
-                        trackButtonClick('Copy Button');	
-						
-						
+                        
+                        trackButtonClick('Copy Button');
+
                     } catch (err) {
                         console.error("Copy failed", err);
                         copyStatus.textContent = 'Failed to copy!';
